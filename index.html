@@ -730,16 +730,13 @@ async function createProfile(user) {
   if (!snap.exists()) {
 
     await setDoc(ref, {
-      uid: user.uid,
-      name: user.displayName || user.email.split("@")[0],
-      email: user.email,
-      points: 0,
-      level: 1,
-      bio: "Learning is my journey",
-      createdAt: serverTimestamp()
-    });
-
-  }
+  uid: user.uid,
+  name: user.displayName || user.email.split("@")[0],
+  points: 0,
+  level: 1,
+  bio: "Learning is my journey",
+  createdAt: serverTimestamp()
+});
 
   await refreshUser();
 
