@@ -2,98 +2,237 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06170f">
+
 <title>PUBLIC PRIME</title>
 
 <style>
 :root{
---bg:#06170f;--card:#0d281b;--card2:#123b26;
---green:#16c76a;--lime:#b8ff68;--white:#f4fff7;
---muted:#a6c4b1;--border:#24543a;
+--bg:#06170f;
+--card:#0d281b;
+--card2:#123b26;
+--green:#16c76a;
+--lime:#b8ff68;
+--white:#f4fff7;
+--muted:#a6c4b1;
+--border:#24543a;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif;padding-bottom:90px}
+
+body{
+background:var(--bg);
+color:var(--white);
+font-family:Arial,sans-serif;
+padding-bottom:90px;
+}
+
 button,input,textarea{font:inherit}
 button{cursor:pointer;border:0;border-radius:12px;padding:13px;font-weight:bold}
-button:disabled{opacity:.5}
+button:disabled{opacity:.5;cursor:not-allowed}
+
 .primary{background:var(--green);color:#032012}
 .secondary{background:var(--card2);color:white;border:1px solid var(--border)}
 .danger{background:#8e2525;color:white}
 .hidden{display:none!important}
+
 .container{max-width:950px;margin:auto;padding:14px}
-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900}
-.logo{
-width:48px;height:48px;border-radius:15px;
-display:grid;place-items:center;
-background:linear-gradient(135deg,var(--lime),var(--green));
-color:#052313;font-weight:1000;font-size:20px;
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 0;
+gap:10px;
 }
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:21px;
+font-weight:900;
+}
+
+.logo{
+width:48px;
+height:48px;
+border-radius:15px;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,var(--lime),var(--green));
+color:#052313;
+font-weight:1000;
+font-size:20px;
+flex-shrink:0;
+}
+
 .green{color:var(--green)}
 .muted{color:var(--muted);font-size:13px;line-height:1.5}
+
 .card{
 background:linear-gradient(145deg,#103321,#0a2115);
 border:1px solid var(--border);
-padding:18px;border-radius:18px;margin:13px 0;
+padding:18px;
+border-radius:18px;
+margin:13px 0;
 }
+
 .hero{
 background:radial-gradient(circle at top right,#17683c,transparent 60%),#0d281b;
 padding:22px;
 }
-h1{font-size:30px;margin-bottom:8px}
+
+h1{font-size:29px;margin-bottom:8px}
 h2{margin-bottom:10px}
+h3{margin-bottom:8px}
+
 label{display:block;margin-top:12px}
+
 input,textarea{
-width:100%;padding:13px;margin:8px 0 13px;
-background:#061b11;color:white;
-border:1px solid var(--border);border-radius:12px;
+width:100%;
+padding:13px;
+margin:8px 0 13px;
+background:#061b11;
+color:white;
+border:1px solid var(--border);
+border-radius:12px;
 }
-textarea{min-height:90px}
+
+textarea{min-height:90px;resize:vertical}
+
 .wide{width:100%}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
 .subject{
-background:var(--card2);color:white;
-border:1px solid var(--border);min-height:85px;
+background:var(--card2);
+color:white;
+border:1px solid var(--border);
+min-height:85px;
 }
+
 .subject strong{display:block;margin-top:8px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-top:16px;
+}
+
 .stat{
-background:#061c11;border:1px solid var(--border);
-border-radius:14px;padding:12px 5px;text-align:center;
+background:#061c11;
+border:1px solid var(--border);
+border-radius:14px;
+padding:12px 5px;
+text-align:center;
 }
-.stat b{display:block;font-size:23px;color:var(--lime)}
+
+.stat b{
+display:block;
+font-size:23px;
+color:var(--lime);
+}
+
 .badge{
-display:inline-block;background:#16472c;color:var(--lime);
-border-radius:20px;padding:6px 12px;font-size:12px;
+display:inline-block;
+background:#16472c;
+color:var(--lime);
+border-radius:20px;
+padding:6px 12px;
+font-size:12px;
 }
-.progress{height:9px;background:#06170f;border-radius:20px;overflow:hidden;margin-top:13px}
-.progress div{height:100%;width:0;background:var(--green)}
+
+.progress{
+height:9px;
+background:#06170f;
+border-radius:20px;
+overflow:hidden;
+margin-top:13px;
+}
+
+.progress div{
+height:100%;
+width:0;
+background:var(--green);
+}
+
 .answer{
-display:block;width:100%;text-align:left;
-background:var(--card2);color:white;
-border:1px solid var(--border);margin:9px 0;
+display:block;
+width:100%;
+text-align:left;
+background:var(--card2);
+color:white;
+border:1px solid var(--border);
+margin:9px 0;
 }
-.list{padding:12px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
+
+.list{
+padding:12px 0;
+border-bottom:1px solid var(--border);
+overflow-wrap:anywhere;
+}
+
 .bottom-nav{
-position:fixed;bottom:0;left:0;width:100%;
-background:#06170ff5;border-top:1px solid var(--border);
-display:flex;justify-content:space-around;align-items:center;
-padding:8px 2px;z-index:100;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#06170ff5;
+border-top:1px solid var(--border);
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:8px 2px;
+z-index:100;
 }
-.bottom-nav button{background:transparent;color:#b6cbbd;font-size:10px;padding:6px 3px}
+
+.bottom-nav button{
+background:transparent;
+color:#b6cbbd;
+font-size:10px;
+padding:6px 3px;
+}
+
 .bottom-nav button.active{color:var(--lime)}
+
 .ad-box{
-border:1px dashed #72927c;border-radius:12px;
-padding:18px;text-align:center;color:var(--muted);
-font-size:12px;margin:18px 0;
+border:1px dashed #72927c;
+border-radius:12px;
+padding:18px;
+text-align:center;
+color:var(--muted);
+font-size:12px;
+margin:18px 0;
 }
+
 #apkButton{
-display:block;max-width:300px;margin:20px auto;
-padding:16px;text-align:center;
-background:var(--lime);color:#052313;
-text-decoration:none;border-radius:14px;font-weight:900;
+display:block;
+max-width:300px;
+margin:20px auto;
+padding:16px;
+text-align:center;
+background:var(--lime);
+color:#052313;
+text-decoration:none;
+border-radius:14px;
+font-weight:900;
 }
+
+.status{
+padding:10px;
+border-radius:10px;
+background:#102c1d;
+margin:10px 0;
+overflow-wrap:anywhere;
+}
+
 @media(min-width:700px){
 .grid{grid-template-columns:repeat(3,1fr)}
 }
@@ -101,6 +240,7 @@ text-decoration:none;border-radius:14px;font-weight:900;
 </head>
 
 <body>
+
 <div class="container">
 
 <header>
@@ -108,28 +248,38 @@ text-decoration:none;border-radius:14px;font-weight:900;
 <div class="logo">PP</div>
 <div>
 PUBLIC <span class="green">PRIME</span>
-<div class="muted">Learn • Quiz • Chat • Grow</div>
+<div class="muted">Learn • Ask • Share • Grow</div>
 </div>
 </div>
+
 <button id="logoutTop" class="secondary hidden">Logout</button>
 </header>
 
-<!-- LOGIN -->
+<!-- LOGIN PAGE -->
 
 <section id="loginPage" class="card hero">
-<h1>Welcome to Public Prime</h1>
+
+<h1>Welcome to PUBLIC PRIME</h1>
 <p class="muted">Your Knowledge, Your Prime.</p>
 
-<p id="authMessage" class="muted"></p>
+<div id="authMessage" class="status muted">
+Welcome! Login to continue.
+</div>
 
 <label>Email Address</label>
 <input id="email" type="email" placeholder="Enter your email">
 
 <label>Password</label>
-<input id="password" type="password" placeholder="At least 6 characters">
+<input id="password" type="password" placeholder="Enter password">
 
 <button id="emailLogin" class="primary wide">
-Login / Create Account
+Login
+</button>
+
+<br><br>
+
+<button id="createAccount" class="secondary wide">
+Create New Account
 </button>
 
 <br><br>
@@ -137,49 +287,123 @@ Login / Create Account
 <button id="googleLogin" class="secondary wide">
 Continue with Google
 </button>
+
+<p class="muted" style="margin-top:15px">
+By continuing, you agree to use PUBLIC PRIME responsibly.
+</p>
+
 </section>
 
-<!-- APP -->
+<!-- MAIN APP -->
 
 <section id="appPage" class="hidden">
 
 <div class="card hero">
-<span class="badge">LEARNING DASHBOARD</span>
+
+<span class="badge">PUBLIC PRIME DASHBOARD</span>
+
 <h2 id="welcome">Welcome!</h2>
+
 <p id="userID" class="muted"></p>
 
+<div id="appMessage" class="status muted hidden"></div>
+
 <div class="stats">
-<div class="stat"><b id="points">0</b><span class="muted">Points</span></div>
-<div class="stat"><b id="level">1</b><span class="muted">Level</span></div>
-<div class="stat"><b id="rank">--</b><span class="muted">Rank</span></div>
+
+<div class="stat">
+<b id="points">0</b>
+<span class="muted">Points</span>
 </div>
 
-<div class="progress"><div id="progressBar"></div></div>
-<p id="progressText" class="muted">1000 Points = 1 Level</p>
+<div class="stat">
+<b id="level">1</b>
+<span class="muted">Level</span>
 </div>
+
+<div class="stat">
+<b id="rank">--</b>
+<span class="muted">Rank</span>
+</div>
+
+</div>
+
+<div class="progress">
+<div id="progressBar"></div>
+</div>
+
+<p id="progressText" class="muted">1000 Points = 1 Level</p>
+
+</div>
+
+<!-- HOME -->
 
 <main id="mainContent">
 
 <div class="card">
-<h2>Explore Subjects</h2>
-<p class="muted">Choose a subject and start learning.</p>
-<br>
 
-<div class="grid">
-<button class="subject" onclick="startQuiz('GK')">🌍<strong>General Knowledge</strong></button>
-<button class="subject" onclick="startQuiz('Math')">➗<strong>Mathematics</strong></button>
-<button class="subject" onclick="startQuiz('Science')">🧪<strong>Science</strong></button>
-<button class="subject" onclick="startQuiz('History')">🏛️<strong>History</strong></button>
-<button class="subject" onclick="startQuiz('English')">🔤<strong>English</strong></button>
-<button class="subject" onclick="startQuiz('Computer')">💻<strong>Computer</strong></button>
-<button class="subject" onclick="startQuiz('Islamic')">📚<strong>Islamic Knowledge</strong></button>
-<button class="subject" onclick="startQuiz('Sports')">🏅<strong>Sports</strong></button>
-</div>
+<h2>Explore PUBLIC PRIME</h2>
+
+<p class="muted">
+Learn, ask questions, share knowledge and connect with people.
+</p>
+
 </div>
 
 <div class="card">
-<h3>Your Learning Journey</h3>
-<p class="muted">Learn daily, earn points and improve your level.</p>
+
+<h2>Explore Subjects</h2>
+
+<div class="grid">
+
+<button class="subject" onclick="startQuiz('GK')">
+🌍<strong>General Knowledge</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('Math')">
+➗<strong>Mathematics</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('Science')">
+🧪<strong>Science</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('History')">
+🏛️<strong>History</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('English')">
+🔤<strong>English</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('Computer')">
+💻<strong>Computer</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('Islamic')">
+📚<strong>Islamic Knowledge</strong>
+</button>
+
+<button class="subject" onclick="startQuiz('Sports')">
+🏅<strong>Sports</strong>
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Community</h2>
+
+<p class="muted">
+Ask anything. Not just study questions.
+You can discuss technology, games, knowledge, news and everyday topics.
+</p>
+
+<button class="primary wide" onclick="openPage('questions')">
+Ask a Question
+</button>
+
 </div>
 
 </main>
@@ -187,32 +411,59 @@ Continue with Google
 <!-- QUESTIONS -->
 
 <section id="questionsSection" class="card hidden">
+
 <h2>Community Questions</h2>
-<textarea id="questionText" placeholder="Write your question..."></textarea>
-<button class="primary" onclick="askQuestion()">Post Question</button>
+
+<p class="muted">
+Ask questions about any topic.
+</p>
+
+<textarea id="questionText" maxlength="500"
+placeholder="What would you like to ask?"></textarea>
+
+<button class="primary wide" onclick="askQuestion()">
+Post Question
+</button>
+
 <div id="questionsList"></div>
+
 </section>
 
 <!-- CHAT -->
 
 <section id="chatSection" class="card hidden">
+
 <h2>Community Chat</h2>
+
+<p class="muted">Talk and share knowledge with the community.</p>
+
 <div id="chatMessages"></div>
-<textarea id="chatInput" placeholder="Write a message..."></textarea>
-<button class="primary" onclick="sendChat()">Send Message</button>
+
+<textarea id="chatInput" maxlength="500"
+placeholder="Write your message..."></textarea>
+
+<button class="primary wide" onclick="sendChat()">
+Send Message
+</button>
+
 </section>
 
 <!-- LEADERBOARD -->
 
 <section id="rankingSection" class="card hidden">
+
 <h2>Global Leaderboard</h2>
+
 <div id="leaderboard"></div>
+
 </section>
 
 <!-- PROFILE -->
 
 <section id="profileSection" class="card hidden">
+
 <h2>My Profile</h2>
+
 <div class="logo">PP</div>
 
 <label>Full Name</label>
@@ -221,77 +472,125 @@ Continue with Google
 <label>About Me</label>
 <textarea id="profileBio" maxlength="250"></textarea>
 
-<button class="primary" onclick="saveProfile()">Save Profile</button>
+<button class="primary wide" onclick="saveProfile()">
+Save Profile
+</button>
 
 <hr style="margin:20px 0;border-color:#24543a">
 
 <h3>My Statistics</h3>
+
 <p id="profileStats" class="muted"></p>
 
-<button class="secondary" onclick="reportUser()">Report / Safety Help</button>
+<button class="secondary wide" onclick="reportUser()">
+Report / Safety Help
+</button>
+
 </section>
 
 <!-- SETTINGS -->
 
 <section id="settingsSection" class="card hidden">
-<h2>Settings</h2>
-<p class="muted">PUBLIC PRIME</p>
 
-<button class="secondary wide" onclick="showSetting('Account Settings')">Account Settings</button>
+<h2>Settings</h2>
+
+<p class="muted">PUBLIC PRIME Account Settings</p>
+
+<button class="secondary wide" onclick="showSetting('Account Settings')">
+Account Settings
+</button>
+
 <br><br>
-<button class="secondary wide" onclick="showSetting('Privacy & Safety')">Privacy & Safety</button>
+
+<button class="secondary wide" onclick="showSetting('Privacy & Safety')">
+Privacy & Safety
+</button>
+
 <br><br>
-<button class="secondary wide" onclick="showSetting('Help & Support')">Help & Support</button>
+
+<button class="secondary wide" onclick="showSetting('Help & Support')">
+Help & Support
+</button>
 
 <div id="settingResult" class="muted"></div>
 
-<button class="danger wide" style="margin-top:15px" onclick="logoutUser()">Logout</button>
+<br>
+
+<button class="danger wide" onclick="logoutUser()">
+Logout
+</button>
+
 </section>
 
 <div class="ad-box">
 ADVERTISEMENT SPACE<br>
-Ads appear here after an approved ad service is integrated.
+Ads can be added after approval from an advertising service.
 </div>
 
 </section>
+
 </div>
 
-<!-- NAVIGATION -->
+<!-- BOTTOM NAVIGATION -->
 
 <nav id="bottomNav" class="bottom-nav hidden">
+
 <button onclick="openPage('home',this)" class="active">⌂<br>Home</button>
+
 <button onclick="openPage('quiz',this)">▣<br>Quiz</button>
+
 <button onclick="openPage('questions',this)">❓<br>Questions</button>
+
 <button onclick="openPage('ranking',this)">♛<br>Ranking</button>
+
 <button onclick="openPage('chat',this)">💬<br>Chat</button>
+
 <button onclick="openPage('profile',this)">👤<br>Profile</button>
+
 <button onclick="openPage('settings',this)">⚙<br>Settings</button>
+
 </nav>
 
 <script type="module">
 
-import {initializeApp}
-from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+initializeApp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 
 import {
-getAuth,onAuthStateChanged,
+getAuth,
+onAuthStateChanged,
 signInWithEmailAndPassword,
 createUserWithEmailAndPassword,
 GoogleAuthProvider,
-signInWithRedirect,getRedirectResult,signOut
+signInWithRedirect,
+getRedirectResult,
+signOut
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 import {
-getFirestore,doc,getDoc,setDoc,updateDoc,
-collection,addDoc,query,orderBy,limit,
-onSnapshot,serverTimestamp
+getFirestore,
+doc,
+getDoc,
+setDoc,
+updateDoc,
+collection,
+addDoc,
+query,
+orderBy,
+limit,
+onSnapshot,
+serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
-/* FIREBASE CONFIG
-Replace these six values with your own Firebase Web App config.
-*/
+
+/* =====================================
+   FIREBASE CONFIGURATION
+   अपनी असली Firebase Web App Config लगाएँ
+===================================== */
 
 const firebaseConfig = {
+
 apiKey: "AIzaSyAu1bles93NJRL_cZw-l7WOZWPSLSDM07Q",
   authDomain: "public-prime-93f40.firebaseapp.com",
   projectId: "public-prime-93f40",
@@ -301,196 +600,528 @@ apiKey: "AIzaSyAu1bles93NJRL_cZw-l7WOZWPSLSDM07Q",
   measurementId: "G-021KNG0X1R"
 };
 
-/* APK LINK: Paste your real direct APK download URL here. */
+
+/* APK DOWNLOAD LINK */
+
 const APK_DOWNLOAD_URL = "";
+
+
+/* =====================================
+   INITIALIZATION
+===================================== */
 
 const $ = id => document.getElementById(id);
 
-let auth,db,currentUser=null,userData={};
-let subscriptions=[];
+let auth = null;
+let db = null;
+
+let currentUser = null;
+let userData = {};
+
+let profileReady = false;
+let subscriptions = [];
+
+let authBusy = false;
+let authGeneration = 0;
 
 const configReady =
 firebaseConfig.apiKey !== "YOUR_API_KEY" &&
 firebaseConfig.projectId !== "YOUR_PROJECT_ID" &&
 firebaseConfig.appId !== "YOUR_APP_ID";
 
-function showMessage(text){
-$("authMessage").textContent=text;
+
+function showMessage(message){
+
+$("authMessage").textContent = message;
+
+}
+
+function showAppMessage(message){
+
+$("appMessage").textContent = message;
+
+$("appMessage").classList.remove("hidden");
+
 }
 
 function errorMessage(error){
-const messages={
-"auth/unauthorized-domain":"Add your website domain in Firebase Authorized Domains.",
-"auth/operation-not-allowed":"Enable this login method in Firebase Authentication.",
-"auth/invalid-email":"Enter a valid email address.",
-"auth/weak-password":"Password must contain at least 6 characters.",
-"auth/invalid-credential":"Email or password is incorrect.",
-"auth/email-already-in-use":"This email already has an account.",
-"auth/network-request-failed":"Check your internet connection."
+
+const messages = {
+
+"auth/unauthorized-domain":
+"Your website domain is not authorized in Firebase.",
+
+"auth/operation-not-allowed":
+"This login method is not enabled in Firebase.",
+
+"auth/invalid-email":
+"Please enter a valid email address.",
+
+"auth/weak-password":
+"Password must contain at least 6 characters.",
+
+"auth/invalid-credential":
+"Email or password is incorrect.",
+
+"auth/email-already-in-use":
+"This email already has an account.",
+
+"auth/network-request-failed":
+"Internet connection failed.",
+
+"auth/popup-blocked":
+"Google login popup was blocked.",
+
+"auth/account-exists-with-different-credential":
+"This email already uses another login method."
+
 };
-return messages[error.code] || error.code+": "+error.message;
+
+return messages[error.code] ||
+(error.code || "Error") + ": " + error.message;
+
 }
+
 
 function showLogin(){
+
 $("loginPage").classList.remove("hidden");
+
 $("appPage").classList.add("hidden");
+
 $("bottomNav").classList.add("hidden");
+
 $("logoutTop").classList.add("hidden");
+
 }
+
 
 function showApp(){
+
 $("loginPage").classList.add("hidden");
+
 $("appPage").classList.remove("hidden");
+
 $("bottomNav").classList.remove("hidden");
+
 $("logoutTop").classList.remove("hidden");
+
 }
 
+
+function stopSubscriptions(){
+
+subscriptions.forEach(unsubscribe=>{
+
+try{unsubscribe()}catch(e){}
+
+});
+
+subscriptions=[];
+
+}
+
+
+/* =====================================
+   FIREBASE START
+===================================== */
+
 if(!configReady){
-showMessage("Please paste your real Firebase Configuration.");
+
+showMessage("Please add your real Firebase Configuration.");
+
 $("emailLogin").disabled=true;
+
+$("createAccount").disabled=true;
+
 $("googleLogin").disabled=true;
+
 }else{
+
 try{
+
 const app=initializeApp(firebaseConfig);
+
 auth=getAuth(app);
+
 db=getFirestore(app);
 
-getRedirectResult(auth).catch(e=>showMessage(errorMessage(e)));
+const provider=new GoogleAuthProvider();
+
+provider.setCustomParameters({
+prompt:"select_account"
+});
+
+
+/*
+IMPORTANT:
+Redirect result is checked before the main auth observer.
+*/
+
+try{
+
+await getRedirectResult(auth);
+
+}catch(error){
+
+showMessage(errorMessage(error));
+
+}
+
+
+/* =====================================
+   AUTH STATE LISTENER
+===================================== */
 
 onAuthStateChanged(auth,async user=>{
+
+const generation=++authGeneration;
+
 currentUser=user;
 
 if(!user){
+
+profileReady=false;
+
+stopSubscriptions();
+
 showLogin();
+
 return;
+
 }
+
+
+/*
+Authentication succeeded.
+Do not send the user back to login
+just because a Firestore profile operation fails.
+*/
+
+showApp();
+
+$("welcome").textContent=
+"Welcome, "+(user.displayName || user.email || "Learner");
+
+$("userID").textContent=
+"User ID: "+user.uid.slice(0,12).toUpperCase();
+
+userData={
+
+uid:user.uid,
+
+name:user.displayName ||
+(user.email ? user.email.split("@")[0] : "Learner"),
+
+email:user.email || "",
+
+points:0,
+
+level:1,
+
+bio:"Learning is my journey"
+
+};
+
+renderProfile();
 
 try{
+
 await createProfile(user);
+
+if(generation!==authGeneration)return;
+
 await refreshUser();
-showApp();
+
+if(generation!==authGeneration)return;
+
+profileReady=true;
+
+showAppMessage("Welcome to PUBLIC PRIME!");
+
 loadQuestions();
-}catch(e){
-showLogin();
-showMessage(errorMessage(e));
+
+}catch(error){
+
+console.error("Profile error:",error);
+
+profileReady=false;
+
+showAppMessage(
+"Login successful, but profile access failed: "+
+errorMessage(error)
+);
+
 }
+
 });
 
-}catch(e){
-showMessage(errorMessage(e));
-}
+}catch(error){
+
+console.error(error);
+
+showMessage(errorMessage(error));
+
 }
 
-/* EMAIL LOGIN / CREATE ACCOUNT */
+}
 
-$("emailLogin").onclick=async()=>{
-if(!auth)return;
+
+/* =====================================
+   EMAIL LOGIN
+===================================== */
+
+async function emailLogin(){
+
+if(!auth || authBusy)return;
 
 const email=$("email").value.trim();
+
 const password=$("password").value;
 
 if(!email || password.length<6){
-showMessage("Enter valid email and password of at least 6 characters.");
+
+showMessage("Enter a valid email and password of at least 6 characters.");
+
 return;
+
 }
+
+authBusy=true;
 
 $("emailLogin").disabled=true;
-showMessage("Please wait...");
+
+$("createAccount").disabled=true;
+
+showMessage("Logging in...");
 
 try{
-try{
+
 await signInWithEmailAndPassword(auth,email,password);
-}catch(error){
 
-if(error.code==="auth/user-not-found"){
-await createUserWithEmailAndPassword(auth,email,password);
-}else{
-throw error;
-}
-
-}
-
-showMessage("");
+showMessage("Login successful. Opening PUBLIC PRIME...");
 
 }catch(error){
+
 showMessage(errorMessage(error));
+
 }finally{
+
+authBusy=false;
+
 $("emailLogin").disabled=false;
+
+$("createAccount").disabled=false;
+
 }
+
+}
+
+$("emailLogin").onclick=emailLogin;
+
+
+/* =====================================
+   CREATE ACCOUNT
+===================================== */
+
+$("createAccount").onclick=async()=>{
+
+if(!auth || authBusy)return;
+
+const email=$("email").value.trim();
+
+const password=$("password").value;
+
+if(!email || password.length<6){
+
+showMessage("Enter a valid email and password of at least 6 characters.");
+
+return;
+
+}
+
+authBusy=true;
+
+$("emailLogin").disabled=true;
+
+$("createAccount").disabled=true;
+
+showMessage("Creating your account...");
+
+try{
+
+await createUserWithEmailAndPassword(auth,email,password);
+
+showMessage("Account created successfully!");
+
+}catch(error){
+
+showMessage(errorMessage(error));
+
+}finally{
+
+authBusy=false;
+
+$("emailLogin").disabled=false;
+
+$("createAccount").disabled=false;
+
+}
+
 };
 
-/* GOOGLE LOGIN */
+
+/* =====================================
+   GOOGLE LOGIN
+===================================== */
 
 $("googleLogin").onclick=async()=>{
-if(!auth)return;
+
+if(!auth || authBusy)return;
+
+authBusy=true;
+
+$("googleLogin").disabled=true;
+
+showMessage("Connecting to Google...");
 
 try{
-showMessage("Opening Google Login...");
+
 await signInWithRedirect(auth,new GoogleAuthProvider());
+
+/*
+The browser leaves this page.
+After returning, getRedirectResult()
+and onAuthStateChanged handle the login.
+*/
+
 }catch(error){
+
 showMessage(errorMessage(error));
+
+authBusy=false;
+
+$("googleLogin").disabled=false;
+
 }
+
 };
 
-/* USER PROFILE */
+
+/* =====================================
+   USER PROFILE
+===================================== */
 
 async function createProfile(user){
 
 const ref=doc(db,"users",user.uid);
+
 const snap=await getDoc(ref);
 
 if(!snap.exists()){
+
 await setDoc(ref,{
+
 uid:user.uid,
-name:user.displayName || user.email.split("@")[0],
-email:user.email,
+
+name:user.displayName ||
+(user.email ? user.email.split("@")[0] : "Learner"),
+
+email:user.email || "",
+
 points:0,
+
 level:1,
+
 bio:"Learning is my journey",
+
 createdAt:serverTimestamp()
+
 });
+
 }
 
 }
+
 
 async function refreshUser(){
 
 if(!currentUser)return;
 
 const snap=await getDoc(doc(db,"users",currentUser.uid));
-if(!snap.exists())return;
+
+if(!snap.exists()){
+
+throw new Error("User profile document does not exist.");
+
+}
 
 userData=snap.data();
 
+renderProfile();
+
+}
+
+
+function renderProfile(){
+
 const points=Number(userData.points)||0;
+
 const level=Math.floor(points/1000)+1;
 
-$("welcome").textContent="Welcome, "+userData.name;
-$("userID").textContent="User ID: "+currentUser.uid.slice(0,12).toUpperCase();
+const name=userData.name ||
+currentUser?.displayName ||
+"Learner";
+
+$("welcome").textContent="Welcome, "+name;
+
+$("userID").textContent=
+"User ID: "+(currentUser?.uid || "").slice(0,12).toUpperCase();
 
 $("points").textContent=points;
+
 $("level").textContent=level;
 
-$("progressBar").style.width=(points%1000)/10+"%";
+$("progressBar").style.width=
+(points%1000)/10+"%";
 
 $("progressText").textContent=
 (1000-points%1000)+" points until next level";
 
-$("profileName").value=userData.name||"";
+$("profileName").value=name;
+
 $("profileBio").value=userData.bio||"";
 
 $("profileStats").textContent=
 "Points: "+points+" | Level: "+level;
+
 }
 
-/* PAGE NAVIGATION */
+
+/* =====================================
+   NAVIGATION
+===================================== */
 
 function hideSections(){
+
 [
-"mainContent","questionsSection","chatSection",
-"rankingSection","profileSection","settingsSection"
+
+"mainContent",
+
+"questionsSection",
+
+"chatSection",
+
+"rankingSection",
+
+"profileSection",
+
+"settingsSection"
+
 ].forEach(id=>$(id).classList.add("hidden"));
+
 }
+
 
 window.openPage=(page,button)=>{
 
@@ -502,117 +1133,183 @@ document.querySelectorAll(".bottom-nav button")
 if(button)button.classList.add("active");
 
 if(page==="home"){
+
 $("mainContent").classList.remove("hidden");
+
 }
 
 if(page==="quiz"){
+
 $("mainContent").classList.remove("hidden");
+
 startQuiz("GK");
+
 }
 
 if(page==="questions"){
+
 $("questionsSection").classList.remove("hidden");
+
 }
 
 if(page==="chat"){
+
 $("chatSection").classList.remove("hidden");
+
 loadChat();
+
 }
 
 if(page==="ranking"){
+
 $("rankingSection").classList.remove("hidden");
+
 loadLeaderboard();
+
 }
 
 if(page==="profile"){
+
 $("profileSection").classList.remove("hidden");
-refreshUser();
+
+renderProfile();
+
 }
 
 if(page==="settings"){
+
 $("settingsSection").classList.remove("hidden");
+
 }
+
 };
 
-/* QUIZ DATA */
+
+/* =====================================
+   QUIZ DATA
+===================================== */
 
 const quizData={
 
 GK:[
+
 ["What is the capital of India?",["Mumbai","New Delhi","Kolkata","Chennai"],1],
+
 ["What is India's national animal?",["Lion","Elephant","Tiger","Horse"],2]
+
 ],
 
 Math:[
+
 ["What is 5 + 3?",["6","7","8","9"],2],
+
 ["What is 12 × 2?",["20","22","24","26"],2]
+
 ],
 
 Science:[
+
 ["Which process helps plants make food?",["Respiration","Photosynthesis","Evaporation","Melting"],1],
+
 ["What is the formula of water?",["CO2","O2","H2O","NaCl"],2]
+
 ],
 
 History:[
+
 ["When did India become independent?",["1942","1945","1947","1950"],2]
+
 ],
 
 English:[
+
 ["What is the meaning of Apple?",["Fruit","Animal","Vehicle","Country"],0]
+
 ],
 
 Computer:[
+
 ["What does CPU stand for?",["Central Processing Unit","Computer Personal Unit","Control Program Utility","Central Power Unit"],0]
+
 ],
 
 Islamic:[
+
 ["How many daily obligatory prayers are there in Islam?",["Three","Four","Five","Six"],2]
+
 ],
 
 Sports:[
+
 ["How many players are in one football team on the field?",["9","10","11","12"],2]
+
 ]
 
 };
 
+
 let selectedSubject="GK";
+
 let currentQuestion=0;
+
 let questions=[];
 
+
 window.startQuiz=subject=>{
+
 selectedSubject=subject;
-questions=quizData[subject];
+
+questions=quizData[subject] || quizData.GK;
+
 currentQuestion=0;
+
 showQuestion();
+
 };
+
 
 function showQuestion(){
 
 const q=questions[currentQuestion];
 
 $("mainContent").innerHTML=`
+
 <div class="card">
+
 <span class="badge">${selectedSubject}</span>
+
 <h3 style="margin:15px 0">
 Question ${currentQuestion+1}/${questions.length}
 </h3>
+
 <p style="font-size:19px;font-weight:bold">${q[0]}</p>
+
 <div id="answers">
+
 ${q[1].map((a,i)=>`
+
 <button class="answer" data-answer="${i}">
 ${String.fromCharCode(65+i)}. ${a}
 </button>
+
 `).join("")}
+
 </div>
+
 <div id="feedback"></div>
+
 </div>
+
 `;
 
 document.querySelectorAll("[data-answer]").forEach(button=>{
+
 button.onclick=()=>checkAnswer(Number(button.dataset.answer));
+
 });
 
 }
+
 
 async function checkAnswer(answer){
 
@@ -631,20 +1328,28 @@ feedback.innerHTML=
 
 try{
 
-/* Demo points system.
-For production, award points securely through Firebase Cloud Functions. */
+if(!profileReady){
+
+throw new Error("Profile is not ready. Please try again.");
+
+}
 
 const newPoints=(Number(userData.points)||0)+10;
 
 await updateDoc(doc(db,"users",currentUser.uid),{
+
 points:newPoints,
+
 level:Math.floor(newPoints/1000)+1
+
 });
 
 await refreshUser();
 
 }catch(error){
+
 feedback.textContent=errorMessage(error);
+
 }
 
 }else{
@@ -655,7 +1360,9 @@ feedback.textContent=
 }
 
 const next=document.createElement("button");
+
 next.className="primary";
+
 next.style.marginTop="12px";
 
 next.textContent=
@@ -667,17 +1374,25 @@ next.onclick=()=>{
 currentQuestion++;
 
 if(currentQuestion<questions.length){
+
 showQuestion();
+
 }else{
 
 $("mainContent").innerHTML=`
+
 <div class="card">
+
 <h2>Quiz Completed!</h2>
+
 <p class="muted">Congratulations on completing your quiz.</p>
+
 <button class="primary" onclick="openPage('home')">
 Back to Home
 </button>
+
 </div>
+
 `;
 
 }
@@ -688,44 +1403,64 @@ feedback.appendChild(next);
 
 }
 
-/* COMMUNITY QUESTIONS */
+
+/* =====================================
+   COMMUNITY QUESTIONS
+===================================== */
 
 window.askQuestion=async()=>{
+
+if(!currentUser)return;
 
 const text=$("questionText").value.trim();
 
 if(!text)return alert("Write a question first.");
+
 if(text.length>500)return alert("Maximum 500 characters.");
 
 try{
 
 await addDoc(collection(db,"communityQuestions"),{
+
 uid:currentUser.uid,
-name:userData.name,
+
+name:userData.name||"Learner",
+
 text:text,
+
 createdAt:serverTimestamp()
+
 });
 
 $("questionText").value="";
+
 alert("Question posted successfully.");
 
 }catch(error){
+
 alert(errorMessage(error));
+
 }
 
 };
 
+
 function loadQuestions(){
 
 const q=query(
+
 collection(db,"communityQuestions"),
+
 orderBy("createdAt","desc"),
+
 limit(30)
+
 );
 
 const unsub=onSnapshot(q,snapshot=>{
 
 const box=$("questionsList");
+
 box.innerHTML="";
 
 snapshot.forEach(item=>{
@@ -733,62 +1468,91 @@ snapshot.forEach(item=>{
 const data=item.data();
 
 const div=document.createElement("div");
+
 div.className="list";
 
 const name=document.createElement("b");
+
 name.textContent=data.name||"Learner";
 
 const text=document.createElement("p");
+
 text.textContent=data.text||"";
 
 div.append(name,text);
+
 box.appendChild(div);
 
 });
 
-},error=>console.error(error));
+},error=>{
+
+console.error("Questions error:",error);
+
+showAppMessage("Questions could not load: "+errorMessage(error));
+
+});
 
 subscriptions.push(unsub);
 
 }
 
-/* CHAT */
+
+/* =====================================
+   COMMUNITY CHAT
+===================================== */
 
 window.sendChat=async()=>{
+
+if(!currentUser)return;
 
 const text=$("chatInput").value.trim();
 
 if(!text)return;
+
 if(text.length>500)return alert("Maximum 500 characters.");
 
 try{
 
 await addDoc(collection(db,"communityChat"),{
+
 uid:currentUser.uid,
-name:userData.name,
+
+name:userData.name||"Learner",
+
 text:text,
+
 createdAt:serverTimestamp()
+
 });
 
 $("chatInput").value="";
 
 }catch(error){
+
 alert(errorMessage(error));
+
 }
 
 };
 
+
 function loadChat(){
 
 const q=query(
+
 collection(db,"communityChat"),
+
 orderBy("createdAt","desc"),
+
 limit(40)
+
 );
 
 const unsub=onSnapshot(q,snapshot=>{
 
 const box=$("chatMessages");
+
 box.innerHTML="";
 
 snapshot.docs.reverse().forEach(item=>{
@@ -796,38 +1560,56 @@ snapshot.docs.reverse().forEach(item=>{
 const data=item.data();
 
 const div=document.createElement("div");
+
 div.className="list";
 
 const name=document.createElement("b");
+
 name.textContent=data.name||"Learner";
 
 const message=document.createElement("p");
+
 message.textContent=data.text||"";
 
 div.append(name,message);
+
 box.appendChild(div);
 
 });
 
-},error=>console.error(error));
+},error=>{
+
+console.error("Chat error:",error);
+
+showAppMessage("Chat could not load: "+errorMessage(error));
+
+});
 
 subscriptions.push(unsub);
 
 }
 
-/* LEADERBOARD */
+
+/* =====================================
+   LEADERBOARD
+===================================== */
 
 function loadLeaderboard(){
 
 const q=query(
+
 collection(db,"users"),
+
 orderBy("points","desc"),
+
 limit(30)
+
 );
 
 const unsub=onSnapshot(q,snapshot=>{
 
 const box=$("leaderboard");
+
 box.innerHTML="";
 
 let rank=0;
@@ -839,29 +1621,46 @@ rank++;
 const data=item.data();
 
 const div=document.createElement("div");
+
 div.className="list";
 
 div.textContent=
+
 rank+". "+(data.name||"Learner")+
+
 " — "+(data.points||0)+
+
 " Points — Level "+
+
 (Math.floor((data.points||0)/1000)+1);
 
 box.appendChild(div);
 
 });
 
-},error=>console.error(error));
+},error=>{
+
+console.error("Leaderboard error:",error);
+
+showAppMessage("Leaderboard error: "+errorMessage(error));
+
+});
 
 subscriptions.push(unsub);
 
 }
 
-/* PROFILE */
+
+/* =====================================
+   PROFILE
+===================================== */
 
 window.saveProfile=async()=>{
 
+if(!currentUser)return;
+
 const name=$("profileName").value.trim();
+
 const bio=$("profileBio").value.trim();
 
 if(!name)return alert("Enter your name.");
@@ -869,38 +1668,56 @@ if(!name)return alert("Enter your name.");
 try{
 
 await updateDoc(doc(db,"users",currentUser.uid),{
+
 name:name.slice(0,50),
+
 bio:bio.slice(0,250)
+
 });
 
 await refreshUser();
+
 alert("Profile updated successfully.");
 
 }catch(error){
+
 alert(errorMessage(error));
+
 }
 
 };
 
-/* SETTINGS */
+
+/* =====================================
+   SETTINGS
+===================================== */
 
 window.showSetting=name=>{
+
 $("settingResult").textContent=
-name+" information.";
+name+" information. More features coming soon.";
+
 };
+
 
 window.reportUser=()=>{
+
 alert("Contact the app administrator to report abusive content.");
+
 };
 
-/* LOGOUT */
+
+/* =====================================
+   LOGOUT
+===================================== */
 
 window.logoutUser=async()=>{
 
+if(!auth)return;
+
 if(confirm("Are you sure you want to logout?")){
 
-subscriptions.forEach(unsubscribe=>unsubscribe());
-subscriptions=[];
+stopSubscriptions();
 
 await signOut(auth);
 
@@ -908,15 +1725,17 @@ await signOut(auth);
 
 };
 
-$("logoutTop").onclick=logoutUser;
+$("logoutTop").onclick=window.logoutUser;
 
-/* APK BUTTON
-Website: button visible.
-App: use ?app=1 in your WebView start URL.
-*/
+
+/* =====================================
+   APK DOWNLOAD BUTTON
+===================================== */
 
 const isApp=
+
 new URLSearchParams(location.search).get("app")==="1" ||
+
 !!(window.Capacitor?.isNativePlatform?.());
 
 if(!isApp){
@@ -924,6 +1743,7 @@ if(!isApp){
 const apk=document.createElement("a");
 
 apk.id="apkButton";
+
 apk.textContent="⬇ DOWNLOAD ANDROID APK";
 
 if(APK_DOWNLOAD_URL){
@@ -935,8 +1755,11 @@ apk.href=APK_DOWNLOAD_URL;
 apk.href="#";
 
 apk.onclick=event=>{
+
 event.preventDefault();
-alert("Please add your APK download link in APK_DOWNLOAD_URL.");
+
+alert("Please add your real APK download link.");
+
 };
 
 }
@@ -946,5 +1769,6 @@ document.body.appendChild(apk);
 }
 
 </script>
+
 </body>
-  </html>
+</html>
